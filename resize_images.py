@@ -34,7 +34,7 @@ def resize_and_rename_to_jpg(input_dir, output_dir, max_images=50):
             print(f"⚠️ Skipping unreadable file: {fname}")
             continue
 
-        new_dim = max(200, (idx - 1) * 24) #change dimension
+        new_dim = 200 + (idx - 1) * 24
         resized = cv2.resize(img, (new_dim, new_dim), interpolation=cv2.INTER_AREA)
 
         out_name = f"image{idx}.jpg"
